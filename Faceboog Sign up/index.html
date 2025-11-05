@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Signup Clone</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">facebook</h1>
+    <div class="form-box">
+      <h2>Create a new account</h2>
+      <p>It's quick and easy.</p>
+      <form id="signupForm">
+        <div class="input-row">
+          <input type="text" id="fname" placeholder="First name" required>
+          <input type="text" id="lname" placeholder="Surname" required>
+        </div>
+
+          <div class="input-row">
+  <select id="day"></select>
+  <select id="month">
+    <option>January</option>
+    <option>February</option>
+    <option>March</option>
+    <option>April</option>
+    <option>May</option>
+    <option>June</option>
+    <option>July</option>
+    <option>August</option>
+    <option>September</option>
+    <option>October</option>
+    <option>November</option>
+    <option>December</option>
+  </select>
+  <select id="year"></select>
+</div>
+
+<script>
+  //  JS se years generate (1900 → current year)
+  const yearSelect = document.getElementById("year");
+  let currentYear = new Date().getFullYear();
+  for (let y = currentYear; y >= 1900; y--) {
+    let opt = document.createElement("option");
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
+  }
+</script>
+
+
+
+        <label>Gender</label>
+        <div class="input-row">
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Custom"> Custom</label>
+        </div>
+
+        <input type="text" id="email" placeholder="Mobile number or email address" required>
+        <input type="password" id="password" placeholder="New password" required>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+      </form>
+      <p class="login-link">Already have an account?</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
